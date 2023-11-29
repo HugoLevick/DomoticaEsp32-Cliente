@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <script src="js/icons.js"></script>
+    <title>Casa Inteligente</title>
+  </head>
+  <body>
+    <header>
+      <h1>Casa Inteligente</h1>
+      <div>
+        <button class="mute-button" id="mute-button" type="button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="16"
+            width="20"
+            viewBox="0 0 640 512"
+          >
+            <!--!Font Awesome Free 6.5.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+            <path
+              d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L542.6 400c2.7-7.8 1.3-16.5-3.9-23l-14.9-18.6C495.5 322.9 480 278.8 480 233.4V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32s-32 14.3-32 32V51.2c-42.6 8.6-79 34.2-102 69.3L38.8 5.1zM224 150.3C243.6 117.7 279.3 96 320 96c61.9 0 112 50.1 112 112v25.4c0 32.7 6.4 64.8 18.7 94.5L224 150.3zM406.2 416l-60.9-48H168.3c21.2-32.8 34.4-70.3 38.4-109.1L160 222.1v11.4c0 45.4-15.5 89.5-43.8 124.9L101.3 377c-5.8 7.2-6.9 17.1-2.9 25.4s12.4 13.6 21.6 13.6H406.2zM384 448H320 256c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7s18.7-28.3 18.7-45.3z"
+            />
+          </svg>
+          <p>Desactivar Alarma</p>
+        </button>
+      </div>
+    </header>
+    <div class="sections flex-center">
+      <div class="section">
+        <h2>Estadísticas</h2>
+        <div class="device-grid-wrapper" id="stats">
+          <div class="button device-card loading" id="temp">
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                <path
+                  fill="black"
+                  d="M160 64c-26.5 0-48 21.5-48 48V276.5c0 17.3-7.1 31.9-15.3 42.5C86.2 332.6 80 349.5 80 368c0 44.2 35.8 80 80 80s80-35.8 80-80c0-18.5-6.2-35.4-16.7-48.9c-8.2-10.6-15.3-25.2-15.3-42.5V112c0-26.5-21.5-48-48-48zM48 112C48 50.2 98.1 0 160 0s112 50.1 112 112V276.5c0 .1 .1 .3 .2 .6c.2 .6 .8 1.6 1.7 2.8c18.9 24.4 30.1 55 30.1 88.1c0 79.5-64.5 144-144 144S16 447.5 16 368c0-33.2 11.2-63.8 30.1-88.1c.9-1.2 1.5-2.2 1.7-2.8c.1-.3 .2-.5 .2-.6V112zM208 368c0 26.5-21.5 48-48 48s-48-21.5-48-48c0-20.9 13.4-38.7 32-45.3V144c0-8.8 7.2-16 16-16s16 7.2 16 16V322.7c18.6 6.6 32 24.4 32 45.3z"
+                />
+              </svg>
+            </div>
+            <div class="card-title">Temperatura</div>
+            <div class="card-value">Cargando...</div>
+          </div>
+
+          <div class="button device-card loading" id="hum">
+            <div class="card-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="16"
+                width="12"
+                viewBox="0 0 384 512"
+              >
+                <path
+                  d="M192 512C86 512 0 426 0 320C0 228.8 130.2 57.7 166.6 11.7C172.6 4.2 181.5 0 191.1 0h1.8c9.6 0 18.5 4.2 24.5 11.7C253.8 57.7 384 228.8 384 320c0 106-86 192-192 192zM96 336c0-8.8-7.2-16-16-16s-16 7.2-16 16c0 61.9 50.1 112 112 112c8.8 0 16-7.2 16-16s-7.2-16-16-16c-44.2 0-80-35.8-80-80z"
+                />
+              </svg>
+            </div>
+            <div class="card-title">Humedad</div>
+            <div class="card-value">Cargando...</div>
+          </div>
+
+          <div class="button device-card loading" id="acc">
+            <div class="card-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="16"
+                width="14"
+                viewBox="0 0 448 512"
+              >
+                <!--Font Awesome Free 6.5.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+                <path
+                  d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"
+                />
+              </svg>
+            </div>
+            <div class="card-title">Acceso</div>
+            <div class="card-value">Cargando...</div>
+          </div>
+        </div>
+
+        <h2>Dispositivos</h2>
+        <div class="device-grid-wrapper" id="leds">
+          <div class="button device-card loading">Cargando...</div>
+        </div>
+      </div>
+
+      <!--Seccion CHAT-->
+
+      <div class="section">
+        <h2>Chat</h2>
+
+        <div class="chat">
+          <div class="chat-messages">
+            <div class="chat-bubble receive">
+              ¡Hola! Soy tu asistente virtual. ¿En qué te puedo ayudar hoy?
+            </div>
+          </div>
+          <form class="chat-form">
+            <input type="text" class="chat-input" />
+            <button class="chat-button" type="button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="16"
+                width="16"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480V396.4c0-4 1.5-7.8 4.2-10.7L331.8 202.8c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8 17.7 316.6C7.1 311.3 .3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z"
+                />
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/alarmAudio.js"></script>
+  <script src="js/chat.js"></script>
+  <script src="js/mostrarAlarma.js"></script>
+  <script src="js/index.js"></script>
+  <script src="js/socket.js"></script>
+</html>
